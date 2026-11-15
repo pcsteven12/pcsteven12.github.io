@@ -258,9 +258,9 @@ footer{border-top:1px solid var(--line);text-align:center;font-family:var(--mono
 
 <nav class="tabs" role="tablist" aria-label="網站導覽">
   <div class="wrap">
-    <button role="tab" data-tab="profile">簡介</button>
     <button role="tab" data-tab="lab">實驗室</button>
     <button role="tab" data-tab="research">研究方向</button>
+    <button role="tab" data-tab="profile">簡介</button>
     <button role="tab" data-tab="publications">論文著作</button>
     <button role="tab" data-tab="teaching">教學</button>
     <button role="tab" data-tab="awards">獲獎</button>
@@ -479,7 +479,7 @@ footer{border-top:1px solid var(--line);text-align:center;font-family:var(--mono
   var tabs=[].slice.call(document.querySelectorAll('nav.tabs button'));
   var panels=[].slice.call(document.querySelectorAll('section.panel'));
   function show(id,push){
-    if(!document.getElementById(id)||!/^(profile|lab|research|publications|teaching|awards|services)$/.test(id)) id='profile';
+    if(!document.getElementById(id)||!/^(profile|lab|research|publications|teaching|awards|services)$/.test(id)) id='lab';
     panels.forEach(function(p){p.classList.toggle('on',p.id===id)});
     tabs.forEach(function(b){
       var on=b.dataset.tab===id;
@@ -491,7 +491,7 @@ footer{border-top:1px solid var(--line);text-align:center;font-family:var(--mono
   }
   tabs.forEach(function(b){b.addEventListener('click',function(){show(b.dataset.tab,true)})});
   window.addEventListener('hashchange',function(){show(location.hash.slice(1))});
-  show(location.hash.slice(1)||'profile');
+  show(location.hash.slice(1)||'lab');
   document.getElementById('yr').textContent=new Date().getFullYear();
   try{if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){document.querySelectorAll('.line svg').forEach(function(s){if(s.setCurrentTime){s.setCurrentTime(12.9)}s.pauseAnimations&&s.pauseAnimations()})}}catch(e){}
 })();
