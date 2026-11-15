@@ -143,19 +143,14 @@ ul.plain li+li{margin-top:.3rem}
 footer{border-top:1px solid var(--line);text-align:center;font-family:var(--mono);font-size:.75rem;color:var(--sub);padding:1.5rem 1rem 2.5rem}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;scroll-behavior:auto!important;transition:none!important}}
 </style>
+<!-- Google tag (gtag.js)：標準寫法，方便 Google 偵測；本機檔案、預覽、localhost 以 ga-disable 關閉，不計入統計 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7K9SHYPLSL"></script>
 <script>
-/* Google Analytics 4 — 只在正式網址（http/https）載入；本機檔案、預覽與 localhost 不會計入統計 */
-(function(){
-  var ID='G-7K9SHYPLSL';
+  window['ga-disable-G-7K9SHYPLSL']=(!/^https?:$/.test(location.protocol)||location.hostname==='localhost'||location.hostname==='127.0.0.1');
   window.dataLayer=window.dataLayer||[];
-  window.gtag=function(){dataLayer.push(arguments)};
-  if(!/^https?:$/.test(location.protocol)||location.hostname==='localhost'||location.hostname==='127.0.0.1') return;
-  var s=document.createElement('script'); s.async=true;
-  s.src='https://www.googletagmanager.com/gtag/js?id='+ID;
-  document.head.appendChild(s);
+  function gtag(){dataLayer.push(arguments);}
   gtag('js',new Date());
-  gtag('config',ID,{send_page_view:false});
-})();
+  gtag('config','G-7K9SHYPLSL',{send_page_view:false});
 </script>
 </head>
 <body>
